@@ -1,0 +1,186 @@
+:root {
+    --folderCardWidth: 170px;
+}
+
+.folders-root {
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 30px;
+}
+
+.folders-root .header {
+    margin: 12px 0px;
+    font-size: 12px;
+    text-align: start;
+    font-weight: bold;
+}
+
+.folders-view {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--folderCardWidth), 1fr));
+    grid-gap: 15px; */
+    text-align: start;
+}
+
+.folder-card, .file-card {
+    display: inline-block;
+    text-align: center;
+    margin: 0px 15px 20px;
+    width: var(--folderCardWidth);
+    background-color: white;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    animation: slide-right 0.5s ease;
+}
+.folder-card.animate-delete, .file-card.animate-delete {
+    animation: animate-delete 0.5s ease 0s 1;
+}
+.file-card {
+    background-color: rgba(255, 165, 0, 0.1);
+}
+
+.folder-card img, .file-card img {
+    width: 70px;
+    margin: 45px 10px;
+    transition: all 0.2s;
+}
+.folder-card img:hover,
+.file-card img:hover {
+    transition: all 0.2s;
+    transform: scale(1.2);
+}
+.folder-card img:hover {
+    cursor: pointer;
+}
+
+.folder-actions {
+    display: grid;
+    padding: 5px 10px;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
+    background-color: white;
+}
+.file-name {
+    display: inline-block;
+}
+.folder-name {
+    display: flex;
+    align-items: center;
+}
+.folder-name p, .file-name p {
+    margin: 0px;
+}
+.folder-name, .file-name {
+    position: relative;
+    width: 100% ;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: start;
+}
+.file-name .file-type {
+    color: rgba(0, 0, 0, 0.5);
+}
+.folder-button {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+.folder-button button {
+    width: 30px;
+    height: 30px;
+    outline: none;
+    border: none;
+    text-align: center;
+    background: transparent;
+    border-radius: 50%;
+    padding: 0px;
+    text-align: center;
+}
+.folder-button button::after {
+    display: none;
+}
+.folder-button button:hover {
+    cursor: pointer;
+}
+.folder-button button:active,
+.folder-button button:focus,
+.folder-button button:checked,
+.folder-button button:hover,
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+    background: rgba(0, 0, 0, 0.05) !important;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.folder-button button:hover {
+    background: none !important;
+}
+
+.dropdown-menu {
+    border: none !important;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 5px !important;
+    padding: 0px !important;
+}
+.dropdown-item {
+    padding: .75rem .4rem !important;
+    font-size: 13px;
+    font-weight: 600 !important;
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+.dropdown-item:hover {
+    background: none !important;
+}
+.folder-actions .delete {
+    color: red !important;
+}
+.dropdown-divider {
+    margin: 0px !important;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-top: none;
+}
+
+.folder-actions .icon {
+    width: 35px;
+    text-align: center;
+}
+
+.folder-button button img {
+    width: 20px;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: middle;
+}
+
+
+/* Keyframe animations */
+@keyframes slide-right {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes name-animate {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animate-delete {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        width: 0px;
+    }
+}
